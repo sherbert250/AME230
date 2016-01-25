@@ -5,10 +5,20 @@
 //set size of window to assignment parameters, set background to black, draw stars for night sky feeling
 void setup() {
   final int YELLOW = #FFFF40;
+  final int WHITE = #FFFFFF;
+  final int BLACK = #000000;
+  
+  final float MOON_RADIUS = 75;
   
   //this size call also sets the system variables 'width' and 'height' which are used later
   size(500, 500);
   background(0);
+  
+  //draw moon
+  setColor(WHITE);
+  ellipse(width - (2 * MOON_RADIUS), 2 * MOON_RADIUS, MOON_RADIUS, MOON_RADIUS);
+  setColor(BLACK);
+  ellipse(width - (3 * MOON_RADIUS), 2 * MOON_RADIUS, 2 * MOON_RADIUS, 2 * MOON_RADIUS);
   
   //draw stars
   setColor(YELLOW);
@@ -22,8 +32,10 @@ void draw() {
   final int INITIAL_TRIANGLE_LENGTH = 256;
   final float BRANCH_RATIO = 0.6;
   
+  
   final int BROWN = #FF8040;
   final int GREEN = #80FF40;
+  
   
   //draw trunk
   setColor(BROWN);
