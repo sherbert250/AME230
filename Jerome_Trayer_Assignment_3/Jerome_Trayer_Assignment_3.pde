@@ -1,8 +1,12 @@
 /*
 *  Author: Jerome Trayer
- */
+*/
+
+import static javax.swing.JOptionPane.*;
 
 //set static variables
+//these colors are strategically chosen for differentiation.
+//see http://www.mulinblog.com/a-color-palette-optimized-for-data-visualization/
 final int WHITE = #FFFFFF;
 final int BLACK = #000000;
 final int BLUE = #5DA5DA;
@@ -34,6 +38,12 @@ void setup() {
 
   //this size call also sets the system variables 'width' and 'height' which are used later
   size(500, 500);
+  
+  //helps the birds fly slower
+  frameRate(30);
+  
+  //explain functionality
+  showMessageDialog(null, "Hi! Move your mouse to control where the bird flies!\nClick to create more birdies!\nEnjoy!", "Directions", INFORMATION_MESSAGE);
 
   //generate star positions for the night time feel
   generateStars(AMOUNT_OF_STARS);
