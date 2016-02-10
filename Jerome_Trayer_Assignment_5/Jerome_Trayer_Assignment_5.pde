@@ -21,7 +21,7 @@ void setup() {
 //This function will be called 60 times a second
 void draw() {
   //decide which color to set for the rectangle  
-  if (state % 4 == 0 || state == 0) {
+  if (state % 6 == 0) {
     setColor(BLACK);
   } else if (state % 2 == 0) {
     setColor(GREEN);
