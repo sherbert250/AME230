@@ -21,16 +21,17 @@ void setup() {
   //general drawing setup
   size(800, 500);
   ellipseMode(CENTER);
-  strokeWeight(1);
+  strokeWeight(0);
   frameRate(10);
-  
+  background(128);
+
   //green rectangle variable setup
   greenInitial = 99;
   rectangleCount = 13;
   shadeStep = (int)((255 - greenInitial) / rectangleCount);
   rectangleStep = (int)((height / 2) / rectangleCount);
   rectangleOffset = (int)(width / (rectangleCount + 1));
-  
+
   //rectangle and circle variable setup
   columns = 5;
   rows = 19;
@@ -51,12 +52,12 @@ void draw() {
       ellipse(j * rectCircOffset, i * rectCircOffset, circleSize, circleSize);
     }
   }
-  
+
   //this loop draws the green rectangles at the bottom of the screen while shading appropriately
   rectMode(CORNER);
-  for(int i = 1; i <= rectangleCount; i++) {
+  for (int i = 1; i <= rectangleCount; i++) {
     setColor(0, greenInitial + (i * shadeStep), 0);
-    rect((i * rectangleOffset) - (0.3 * rectangleOffset), height - (i * rectangleStep) - (rectangleOffset / 2), 2 * rectangleStep, i * rectangleStep);
+    rect((i * rectangleOffset) - (0.3 * rectangleOffset), height - (i * rectangleStep) - (rectangleOffset / 2) + 10, 2 * rectangleStep, i * rectangleStep);
   }
 }
 
