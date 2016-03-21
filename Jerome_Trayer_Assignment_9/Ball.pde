@@ -60,14 +60,14 @@ class Ball {
   
   //this function moves any ball within a 200px box around the mouse away from the mouse
   void disperse(int mouseX, int mouseY) {
-    if(x - mouseX < 200 && x - mouseX > -200 && y - mouseY < 200 && y - mouseY < 200) {
+    if(dist(mouseX, mouseY, x, y) < 200) {
       //option1: balls closer to the mouse move faster than balls further from the mouse
-      //velocityX = (x - mouseX) / 50.0 < 0 ? -4 + (x - mouseX) / 50.0 : 4 - (x - mouseX) / 50.0;
-      //velocityY = (y - mouseY) / 50.0 < 0 ? -4 + (y - mouseY) / 50.0 : 4 - (y - mouseY) / 50.0;
+      velocityX = (x - mouseX) / 50.0 < 0 ? -4 + (x - mouseX) / 50.0 : 4 - (x - mouseX) / 50.0;
+      velocityY = (y - mouseY) / 50.0 < 0 ? -4 + (y - mouseY) / 50.0 : 4 - (y - mouseY) / 50.0;
       
       //option2: balls closer to the mouse move slower than balls further from the mouse
-      velocityX = (x - mouseX) / 50.0;
-      velocityY = (y - mouseY) / 50.0;
+      //velocityX = (x - mouseX) / 50.0;
+      //velocityY = (y - mouseY) / 50.0;
     }
   }
 }
